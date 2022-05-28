@@ -1,0 +1,26 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.listadoNavbar{
+  padding: 20px 0;
+  background-color: rgb(206, 206, 206);
+}
+.listadoNavbar ul{
+  display: flex;
+  vertical-align: center;
+  justify-content: center;
+}
+.liLink {
+  width: 150px;
+  list-style-type: none;
+  margin-left: 20px;
+}
+.liLink a:link {
+  color: red;
+}
+.saluditop{
+  text-align: center;
+  margin: 20px 0;
+}
