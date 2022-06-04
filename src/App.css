@@ -24,3 +24,44 @@
   text-align: center;
   margin: 20px 0;
 }
+
+/*cardsProductos*/
+.ImgProduct{
+  width: 100%;
+  border-radius: 20px;
+}
+.containerProducto{
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px 2px;
+}
+.categoriaProducto{
+  color: #868686;
+  font-size: 1rem;
+}
+.precioProducto{
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: red;
+  font-weight: bold;
+}
+.addProducto{
+  border-radius: 20px;
+  padding: 5px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: none;
+  margin-bottom: 30px;
+  transition: .5s;
+}
+.addProducto:hover{
+  color: white;
+  background-color: black;
+  transition: .5s;
+}
+/*cardsProductos*/
+
