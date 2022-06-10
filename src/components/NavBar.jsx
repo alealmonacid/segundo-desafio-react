@@ -1,20 +1,31 @@
 // import logo from './images/logo.png'
 import { Link, NavLink } from 'react-router-dom'
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 const NavBar = () => {
     return (
         <>
-            <nav className="navBarTest">
-                <Link to='/'>
-                    LOGO
-                </Link>
-                <div className="listadoNavbar"> 
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home"><Link to='/'>
+                        LOGO
+                    </Link></Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link><NavLink to="/categoria/Abarrotes">Abarrotes</NavLink></Nav.Link>
+                        <Nav.Link><NavLink to="/categoria/Frutas">Frutas</NavLink></Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar>
+            {/* <nav className="navBarTest">
+
+                <div className="listadoNavbar">
                     <ul>
-                        <li className="liLink"><NavLink to="/categoria/Abarrotes">Abarrotes</NavLink></li>
-                        <li className="liLink"><NavLink to="/categoria/Frutas">Frutas</NavLink></li>
+                        <li className="liLink"></li>
+                        <li className="liLink"></li>
                     </ul>
                 </div>
-            </nav>
+            </nav> */}
         </>
     )
 }
