@@ -1,21 +1,28 @@
 import {useState, useEffect} from 'react'
-import { getProductos } from '../data/data'
-import ItemList from './itemList'
+import { getProductos, getProductosPorCategoria } from '../data/data'
+import {useParams} from 'react-router-dom'
+import ItemList from './ItemList'
+import Container from 'react-bootstrap/Container';
 
 const ItemListContainer = (props) => {
     const [productos, setProductos] = useState([])
+    const {categoryId} = useParams()
 
     useEffect(() => {
-        getProductos().then(res => {
-            setProductos(res)
-        })
-    },[])
+        // getProductos().then(res => {
+        //     setProductos(res)
+        // })
+        if(!categoryId){
+            getProductos().then(producto => {setProductos(producto)}).catch(error => { console.log(error) })
+        } else {
+            getProductosPorCategoria(categoryId).then(producto => {setProductos(producto)}).catch(error => { console.log(error) })
+        }
+    },[categoryId])
 
     return (
-        <div className="saluditop">
-            <h2>Hola, {props.name} Bienvenido!</h2>
-            <ItemList productos={productos}/>
-        </div>
+        <Container fluid="lg">
+            {productos.length > 0 ? <ItemList productos={productos}/> : <h1>Categoría sin productos</h1>}
+        </Container>
     )
 }
 

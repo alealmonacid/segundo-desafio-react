@@ -1,16 +1,17 @@
 // import logo from './images/logo.png'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <>
             <nav className="navBarTest">
-                <div className="imgLogo"></div>
+                <Link to='/'>
+                    LOGO
+                </Link>
                 <div className="listadoNavbar"> 
                     <ul>
-                        <li className="liLink"><a href="/">Inicio</a></li>
-                        <li className="liLink"><a href="/">Quienes Somos</a></li>
-                        <li className="liLink"><a href="/">Contacto</a></li>
-                        <li className="liLink"><a href="/">Categorias</a></li>
+                        <li className="liLink"><NavLink to="/categoria/Abarrotes">Abarrotes</NavLink></li>
+                        <li className="liLink"><NavLink to="/categoria/Frutas">Frutas</NavLink></li>
                     </ul>
                 </div>
             </nav>
