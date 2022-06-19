@@ -65,3 +65,13 @@
 }
 /*cardsProductos*/
 
+
+.quantityPDP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numberQuantityPDP {
+  padding: 0 2rem;
+}
