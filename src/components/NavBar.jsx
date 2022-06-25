@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Cart from '../container/Cart';
+import CartWidget from '../container/CartWidget';
 const NavBar = () => {
     return (
         <>
@@ -16,7 +16,7 @@ const NavBar = () => {
                         <Nav.Link><NavLink to="/categoria/Abarrotes">Abarrotes</NavLink></Nav.Link>
                         <Nav.Link><NavLink to="/categoria/Frutas">Frutas</NavLink></Nav.Link>
                     </Nav>
-                    <Cart/>
+                    <CartWidget/>
                 </Container>
             </Navbar>
             {/* <nav className="navBarTest">
