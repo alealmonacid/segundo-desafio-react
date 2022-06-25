@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
+import { Container } from 'react-bootstrap';
 import ItemCount from "../container/itemCount"
 import CartContext from '../context/CartContext'
 import { Link } from 'react-router-dom'
@@ -18,7 +19,7 @@ const ItemDetail = ({ id, nombre, precio, categoria, imagen_producto, stock, des
     }
 
     return (
-        <Col xs={12} md={12} lg={12}>
+        <Container>
             <Row className='containerProducto'>
                 <Col xs={12} md={6} lg={6}>
                     <img src={imagen_producto} alt={nombre} className='ImgProduct' />
@@ -37,7 +38,7 @@ const ItemDetail = ({ id, nombre, precio, categoria, imagen_producto, stock, des
                     </Row>
                 </Col>
             </Row>
-        </Col>
+        </Container>
 
     )
 }

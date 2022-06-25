@@ -13,8 +13,8 @@ const NavBar = () => {
                         LOGO
                     </Link></Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link><NavLink to="/categoria/Abarrotes">Abarrotes</NavLink></Nav.Link>
-                        <Nav.Link><NavLink to="/categoria/Frutas">Frutas</NavLink></Nav.Link>
+                        <Nav.Link><NavLink to="/categoria/despensa">Despensa</NavLink></Nav.Link>
+                        <Nav.Link><NavLink to="/categoria/Frutas%20y%20Verduras">Frutas y Verduras</NavLink></Nav.Link>
                     </Nav>
                     <CartWidget/>
                 </Container>
