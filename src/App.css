@@ -93,3 +93,44 @@
   padding: 2px 10px;
   border-radius: 20px;
 }
+
+.titleCart{
+  text-align: center;
+    margin: 30px 0;
+    font-weight: bold;
+}
+.totalPrecioCart{
+  float: right;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.cartEliminarProducto{
+  cursor: pointer;
+}
+.containerImageCart{
+  text-align: center;
+}
+.imageCartProduct{
+  width: 200px;
+  border-radius: 20px;
+}
+.containerDataProductCart{
+  padding-top: 35px;
+}
+.containerDeleteProductCart{
+  text-align: center;
+  padding-top: 70px;
+}
+.containerCartProduct{
+  padding: 30px 0;
+  border: 1px solid #b9b9b9;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.itemCartName{
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.linkCart{
+  text-decoration: none;
+}
