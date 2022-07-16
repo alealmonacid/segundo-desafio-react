@@ -4,12 +4,10 @@ import { Link } from "react-router-dom"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import { useCartContext } from '../context/CartContext';
 const Cart = () => {
-
+    const {login} = useCartContext();
     const { cart, deleteItem, priceToPay } = useContext(CartContext)
-    console.log("ESOO", cart)
-
     return (
         <>
             <h2 className="titleCart">Tu Carrito</h2>
@@ -44,25 +42,11 @@ const Cart = () => {
                                                     </Col>
                                                 </Row>    
                                             </Col>
-                                            
-                                        
-                                        // <tr key={item.id}>
-                                        //     <td><img src={item.imagen_producto} alt={item.nombre} className="imageCartProduct" /></td>
-                                        //     <td> 
-                                        //         <Row>
-                                        //             <Col xs={12} md={12}>{item.nombre}</Col>
-                                        //             <Col xs={12} md={12}>Cantidad: {item.quantity}</Col>
-                                        //         </Row>
-                                        //         </td>
-                                        //     <td><p>Cantidad: {item.quantity}</p></td>
-                                        //     <td><h6>${(item.precio)}</h6></td>
-                                        //     <td><h6>${(item.precio) * (item.quantity)}</h6></td>
-                                        //     <td><div className="cartEliminarProducto" onClick={() => deleteItem(item.id)}>🗑️</div></td>
-                                        // </tr>
                                     ))
                                 }
                             </Row>
                         <div className="totalPrecioCart">Total {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(priceToPay())}</div>
+                        <Link onClick={login} to="/checkout" className="botonPagar">Ir a pagar</Link>
                     </Container>
             }
 

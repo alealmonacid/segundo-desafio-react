@@ -135,3 +135,27 @@
 .linkCart{
   text-decoration: none;
 }
+.botonPagar{
+  background: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  transition: .5s;
+}
+a.botonPagar{
+  text-decoration: none;
+}
+.botonPagar:hover{
+  background: yellow !important;
+  color: blue;
+  transition: .5s;
+}
+a{
+  text-decoration: none;
+  color: yellow;
+  transition: .5s;
+}
+.container-lg h1{
+  text-align: center;
+  margin: 50px 0;
+}

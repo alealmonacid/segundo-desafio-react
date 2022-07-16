@@ -1,11 +1,21 @@
-import { useState, useEffect, createContext } from "react"
+import { useContext, useState, useEffect, createContext } from "react"
+import { auth } from "../firebase/config";
+import { provider } from "../firebase/config";
+import {signInWithPopup} from "firebase/auth";
 
-const CartContext = createContext()
+export const CartContext = createContext()
 
+export const useCartContext =()=>{
+    return useContext(CartContext)
+}
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
+    const [resumen, setResumen] = useState([]);
+    const [user, setUser] = useState([])
     const [totalQuantity, setTotalQuantity] = useState(0)
+    const [loginStatus, setLoginStatus]=useState(true)
     console.log(cart)
+    console.log(resumen)
 
 
     useEffect(() => {
@@ -17,9 +27,10 @@ export const CartProvider = ({ children }) => {
     }, [cart])
   
     const addItem = (productToAdd) => {
-      if(!isInCart(productToAdd.id)) {
+    //   if(!isInCart(productToAdd.id)) {
         setCart([...cart, productToAdd])
-      }
+        setResumen([...cart, productToAdd]);
+    //   }
     }
 
     const deleteItem = (id) => {
@@ -33,16 +44,34 @@ export const CartProvider = ({ children }) => {
     const priceToPay = () => {
         return cart.reduce((acc, prod) => acc += (prod.precio * prod.quantity), 0)
     }
+    const login = ()=>{
+        signInWithPopup(auth, provider)
+      .then((re) => {
+        console.log(re)
+        const resp = {email:re.user.email, NombreCliente: re.user.displayName}
+        setUser([resp])
+        setLoginStatus(false)
+        console.log(resp)
+      })
+      .catch((error)=>{
+        console.log(error)
+      }) 
+    }
 
     return (
         <CartContext.Provider value={{ 
             cart,
             setCart,
+            resumen,
+            setResumen, 
             addItem,
             isInCart,
             priceToPay,
             totalQuantity,
-            deleteItem
+            deleteItem,
+            loginStatus,
+            user, 
+            login
         }}>
             { children }
         </CartContext.Provider>
